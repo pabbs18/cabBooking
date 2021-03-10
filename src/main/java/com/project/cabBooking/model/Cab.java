@@ -16,10 +16,10 @@ public class Cab {
     @Setter
     Boolean isAvailable;
 
-    public Cab(String id, String driverName, Boolean isAvailable) {
+    public Cab(String id, String driverName) {
         this.id = id;
         this.driverName = driverName;
-        this.isAvailable = isAvailable;
+        this.isAvailable = true;
     }
 
     @Override

@@ -5,12 +5,14 @@ import com.project.cabBooking.exceptions.CabNotFoundException;
 import com.project.cabBooking.model.Cab;
 import com.project.cabBooking.model.Location;
 import lombok.NonNull;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Service
 public class CabsManager {
     Map<String, Cab> cabs = new HashMap<>();
 
@@ -20,6 +22,14 @@ public class CabsManager {
         }
         cabs.put(newCab.getId(), newCab);
     }
+
+    public Cab getCab(@NonNull final String cabId){
+        if(!cabs.containsKey(cabId)){
+            throw new CabNotFoundException();
+        }
+        return cabs.get(cabId);
+    }
+
 
     public void updateCabLocation(@NonNull final String cabId, @NonNull final Location newLocation){
         if(!cabs.containsKey(cabId)){

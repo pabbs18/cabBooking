@@ -4,10 +4,12 @@ import com.project.cabBooking.exceptions.RiderAlreadyExistsException;
 import com.project.cabBooking.exceptions.RiderNotFoundException;
 import com.project.cabBooking.model.Rider;
 import lombok.NonNull;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 /*Map based in-memory database*/
+@Service
 public class RiderManager {
 
     Map<String, Rider> riderMap = new HashMap<>();
