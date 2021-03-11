@@ -30,7 +30,7 @@ public class CabController {
 
     @PostMapping(value="/update/cab/availability")
     public ResponseEntity updateCabAvailability(final String cabId, final Boolean newAvailability){
-        cabsManager.updateAvailibility(cabId,newAvailability);
+        cabsManager.updateAvailability(cabId,newAvailability);
         return ResponseEntity.ok("");
     }
 

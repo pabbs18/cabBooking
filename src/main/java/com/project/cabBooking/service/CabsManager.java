@@ -38,7 +38,7 @@ public class CabsManager {
         cabs.get(cabId).setCurrentLocation(newLocation);
     }
 
-    public void updateAvailibility(@NonNull final String cabId, @NonNull final Boolean newAvailibility){
+    public void updateAvailability(@NonNull final String cabId, @NonNull final Boolean newAvailibility){
         if(!cabs.containsKey(cabId)){
             throw new CabNotFoundException();
         }
